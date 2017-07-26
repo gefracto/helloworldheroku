@@ -3,9 +3,10 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	// "html/template"
-	// "log"
 	)
+
+
+var counter = 0
 
 func main() {
 	fmt.Println("Hello dudes! ")
@@ -14,11 +15,8 @@ func main() {
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	// t, err := template.ParseFiles("templates/index.html")
-	// if err != nil {
-	// 	fmt.Fprintf(w, err.Error())
-	// 	return
-	// }
-	// t.ExecuteTemplate(w, "index", nil)
-	w.Write([]byte("hello blablabla"))
+
+	counter++
+	
+	w.Write([]byte(fmt.Sprintf("Hello %d times.", counter)))
 }
