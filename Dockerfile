@@ -1,3 +1,3 @@
-FROM fuyufjh/go-scratch
+FROM golang:onbuild
 COPY main   /
 CMD ["/main"]
