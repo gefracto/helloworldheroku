@@ -9,7 +9,7 @@ import (
 func main() {
 	fmt.Println("Hello dudes! ")
 	http.HandleFunc("/", IndexHandler)
-	http.ListenAndServe(":1000", nil)
+	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
